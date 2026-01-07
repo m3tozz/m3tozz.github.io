@@ -61,6 +61,14 @@ body::after {
   20%, 22%, 81% { opacity: 0.4; }
 }
 
+/* BUTTONS */
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .buttons a {
   display: inline-block;
   margin: 6px;
@@ -78,11 +86,24 @@ body::after {
 }
 
 @media (max-width: 600px) {
+
   .logo {
     font-size: 44px;
   }
+
+  .buttons {
+    flex-wrap: nowrap;       
+    gap: 6px;
+    overflow-x: auto;        
+  }
+
+  .buttons a {
+    flex-shrink: 0;
+    margin: 0;
+  }
+
   .buttons img {
-    height: 28px;
+    height: 22px;        
   }
 }
 </style>
@@ -92,6 +113,7 @@ body::after {
 
 <div class="container">
   <div class="logo">Metin Zühre</div>
+
   <div class="buttons">
     <a href="https://discord.com/users/1069900432941522994" target="_blank">
       <img src="https://img.shields.io/badge/Discord-000000?style=for-the-badge&logo=discord&logoColor=white">
@@ -125,4 +147,3 @@ body::after {
 
 </body>
 </html>
-
