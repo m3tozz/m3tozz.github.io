@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>M3TOZZ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="favicon.png" rel="icon">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
 
@@ -16,14 +16,13 @@
 
 body {
   height: 100vh;
-  background: 
+  background:
     linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
     url("background.jpg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #e6e6e6;
-  overflow: hidden;
   font-family: Arial, sans-serif;
 }
 
@@ -39,7 +38,7 @@ body::after {
 
 .container {
   text-align: center;
-  padding: 50px 40px;
+  padding: 40px;
 }
 
 /* LOGO */
@@ -47,70 +46,102 @@ body::after {
   font-family: 'UnifrakturCook', serif;
   font-size: 72px;
   letter-spacing: 6px;
-  margin-bottom: 35px;
+  margin-bottom: 32px;
   animation: flicker 3s infinite;
-  text-shadow:
-    0 0 2px #fff,
-    2px 0 0 rgba(255,0,0,0.15),
-    -2px 0 0 rgba(255,0,0,0.15);
 }
 
-/* FLICKER */
 @keyframes flicker {
-  0%, 19%, 21%, 23%, 80%, 100% { opacity: 1; }
-  20%, 22%, 81% { opacity: 0.4; }
+  0%,19%,21%,23%,80%,100% {opacity:1;}
+  20%,22%,81% {opacity:0.4;}
 }
 
-/* BUTTONS */
+/* DESKTOP BUTTONS */
 .buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .buttons a {
-  display: inline-block;
   margin: 6px;
 }
 
 .buttons img {
   height: 34px;
   filter: grayscale(100%) brightness(0.9);
-  transition: transform 0.15s ease, filter 0.15s ease;
+  transition: 0.15s;
 }
 
 .buttons img:hover {
   transform: scale(1.08);
-  filter: grayscale(0%) brightness(1.1) drop-shadow(0 0 4px rgba(255,0,0,0.6));
+  filter: grayscale(0%) brightness(1.1)
+    drop-shadow(0 0 4px rgba(255,0,0,.6));
 }
 
+/* 📱 MOBILE MODE */
 @media (max-width: 600px) {
 
   .logo {
-    font-size: 44px;
+    font-size: 42px;
   }
 
   .buttons {
-    flex-wrap: nowrap;       
-    gap: 6px;
-    overflow-x: auto;        
+    flex-wrap: nowrap;
+    gap: 8px;
   }
 
-  .buttons a {
-    flex-shrink: 0;
-    margin: 0;
-  }
-
+  /* shields gizle */
   .buttons img {
-    height: 22px;        
+    display: none;
+  }
+
+  /* mobil kapsül buton */
+  .buttons a {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 6px rgba(255,0,0,0.25);
+  }
+
+  .buttons a::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: invert(1);
+  }
+
+  a[href*="discord"]::before {
+    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg");
+  }
+  a[href*="mastodon"]::before {
+    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mastodon.svg");
+  }
+  a[href*="spotify"]::before {
+    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/spotify.svg");
+  }
+  a[href*="github"]::before {
+    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg");
+  }
+  a[href*="mozilla"]::before {
+    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/firefox.svg");
+  }
+  a[href*="letterboxd"]::before {
+    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/letterboxd.svg");
+  }
+  a[href*="coffee"]::before {
+    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/buymeacoffee.svg");
   }
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
   <div class="logo">Metin Zühre</div>
 
@@ -118,32 +149,25 @@ body::after {
     <a href="https://discord.com/users/1069900432941522994" target="_blank">
       <img src="https://img.shields.io/badge/Discord-000000?style=for-the-badge&logo=discord&logoColor=white">
     </a>
-
     <a href="https://mastodon.social/@m3tozz" target="_blank">
       <img src="https://img.shields.io/badge/Mastodon-000000?style=for-the-badge&logo=mastodon&logoColor=white">
     </a>
-
     <a href="https://open.spotify.com/user/31q7mjrmnxras24qeeyqwtqmvkfa" target="_blank">
       <img src="https://img.shields.io/badge/Spotify-000000?style=for-the-badge&logo=spotify&logoColor=white">
     </a>
-
     <a href="https://github.com/m3tozz" target="_blank">
       <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white">
     </a>
-
     <a href="https://addons.mozilla.org/tr/firefox/user/19003496/" target="_blank">
       <img src="https://img.shields.io/badge/Firefox_Addons-000000?style=for-the-badge&logo=firefox&logoColor=white">
     </a>
-
     <a href="https://letterboxd.com/metincharm/" target="_blank">
       <img src="https://img.shields.io/badge/Letterboxd-000000?style=for-the-badge&logo=letterboxd&logoColor=white">
     </a>
-
     <a href="https://buymeacoffee.com/m3tozz" target="_blank">
       <img src="https://img.shields.io/badge/Buy_Me_A_Coffee-000000?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white">
     </a>
   </div>
 </div>
-
 </body>
 </html>
