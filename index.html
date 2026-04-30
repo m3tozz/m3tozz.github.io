@@ -1,169 +1,258 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>M3TOZZ</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="favicon.png" rel="icon">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metin | Personal Website</title>
+  <link href="favicon.png" rel="icon">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+    }
 
-body {
-  height: 100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("background.jpg") center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #e6e6e6;
-  font-family: Arial, sans-serif;
-}
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
 
-/* GRAIN */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.12;
-  pointer-events: none;
-}
+    .container {
+      max-width: 650px;
+    }
 
-.container {
-  text-align: center;
-  padding: 40px;
-}
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
 
-/* LOGO */
-.logo {
-  font-family: 'UnifrakturCook', serif;
-  font-size: 72px;
-  letter-spacing: 6px;
-  margin-bottom: 32px;
-  animation: flicker 3s infinite;
-}
+    p {
+      font-size: 1.2rem;
+      color: #cccccc;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
 
-@keyframes flicker {
-  0%,19%,21%,23%,80%,100% {opacity:1;}
-  20%,22%,81% {opacity:0.4;}
-}
+    .links {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
 
-/* DESKTOP BUTTONS */
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+    .links a {
+      display: inline-flex;
+    }
 
-.buttons a {
-  margin: 6px;
-}
+    .links a img {
+      transition: transform 0.2s ease;
+    }
 
-.buttons img {
-  height: 34px;
-  filter: grayscale(100%) brightness(0.9);
-  transition: 0.15s;
-}
+    .links a img:hover {
+      transform: scale(1.05);
+    }
 
-.buttons img:hover {
-  transform: scale(1.08);
-  filter: grayscale(0%) brightness(1.1)
-    drop-shadow(0 0 4px rgba(255,0,0,.6));
-}
+    .projects-nav {
+      display: block;
+      margin-top: 18px;
+      color: #ffffff;
+      text-decoration: underline;
+      font-size: 0.95rem;
+    }
 
-/* 📱 MOBILE MODE */
-@media (max-width: 600px) {
+    /* PROJECTS */
+    .projects {
+      padding: 70px 20px;
+      display: flex;
+      justify-content: center;
+    }
 
-  .logo {
-    font-size: 42px;
-  }
+    .projects-container {
+      max-width: 900px;
+      width: 100%;
+    }
 
-  .buttons {
-    flex-wrap: nowrap;
-    gap: 10px;
-  }
+    .projects-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #ffffff;
+    }
 
-  /* desktop badge gizle */
-  .buttons img {
-    display: none;
-  }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 15px;
+    }
 
-  /* mobil ikon kapsül */
-  .buttons a {
-    width: 46px;
-    height: 46px;
-    border-radius: 14px;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 6px rgba(255,0,0,0.25);
-  }
+    .card {
+      background: #161616;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 18px;
+    }
 
-  .buttons a::before {
-    content: "";
-    width: 22px;
-    height: 22px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    filter: invert(1);
-  }
+    .card h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.3rem;
+    }
 
-  a[href*="discord"]::before {
-    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg");
-  }
+    .card p {
+      margin: 0;
+      color: #cccccc;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
 
-  a[href*="spotify"]::before {
-    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/spotify.svg");
-  }
+    .card a {
+      display: inline-block;
+      margin-top: 12px;
+      color: #ffffff;
+      text-decoration: underline;
+      font-size: 0.9rem;
+    }
 
-  a[href*="github"]::before {
-    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg");
-  }
+    .tag {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border: 1px solid #333;
+      border-radius: 20px;
+      color: #aaa;
+    }
 
-  a[href*="mozilla"]::before {
-    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/firefox.svg");
-  }
+    .footer-link {
+      text-align: center;
+      margin-top: 30px;
+    }
 
-  a[href*="letterboxd"]::before {
-    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/letterboxd.svg");
-  }
-}
-</style>
+    .footer-link a {
+      color: #ffffff;
+      text-decoration: underline;
+      font-size: 0.95rem;
+    }
+
+  </style>
 </head>
-
 <body>
-<div class="container">
-  <div class="logo">Metin Zühre</div>
 
-  <div class="buttons">
-    <a href="https://discord.com/users/1069900432941522994" target="_blank">
-      <img src="https://img.shields.io/badge/Discord-000000?style=for-the-badge&logo=discord&logoColor=white">
-    </a>
+  <section class="hero">
+    <div class="container">
+      <h1>Hello, I'm Metin</h1>
+      <p>
+        I'm not a programmer, just creating simple things.
+      </p>
 
-    <a href="https://open.spotify.com/user/31q7mjrmnxras24qeeyqwtqmvkfa" target="_blank">
-      <img src="https://img.shields.io/badge/Spotify-000000?style=for-the-badge&logo=spotify&logoColor=white">
-    </a>
+      <div class="links">
+        <a href="https://discord.com/users/1069900432941522994" target="_blank">
+          <img src="https://img.shields.io/badge/Discord-000000?style=for-the-badge&logo=discord&logoColor=white">
+        </a>
 
-    <a href="https://github.com/m3tozz" target="_blank">
-      <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white">
-    </a>
+        <a href="https://open.spotify.com/user/31q7mjrmnxras24qeeyqwtqmvkfa" target="_blank">
+          <img src="https://img.shields.io/badge/Spotify-000000?style=for-the-badge&logo=spotify&logoColor=white">
+        </a>
 
-    <a href="https://addons.mozilla.org/tr/firefox/user/19003496/" target="_blank">
-      <img src="https://img.shields.io/badge/Firefox_Addons-000000?style=for-the-badge&logo=firefox&logoColor=white">
-    </a>
+        <a href="https://github.com/m3tozz" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white">
+        </a>
 
-    <a href="https://letterboxd.com/metincharm/" target="_blank">
-      <img src="https://img.shields.io/badge/Letterboxd-000000?style=for-the-badge&logo=letterboxd&logoColor=white">
-    </a>
-  </div>
-</div>
+        <a href="https://addons.mozilla.org/tr/firefox/user/19003496/" target="_blank">
+          <img src="https://img.shields.io/badge/Firefox_Addons-000000?style=for-the-badge&logo=firefox&logoColor=white">
+        </a>
+
+        <a href="https://letterboxd.com/metincharm/" target="_blank">
+          <img src="https://img.shields.io/badge/Letterboxd-000000?style=for-the-badge&logo=letterboxd&logoColor=white">
+        </a>
+      </div>
+
+      <a class="projects-nav" href="#projects">Projects ↓</a>
+
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="projects-container">
+
+      <div class="projects-title">Projects</div>
+
+      <div class="grid">
+
+        <div class="card">
+          <h2>FastCat</h2>
+          <p>
+            FastCat contains its own fastfetch configurations and uploads the selected configuration to your system.
+          </p>
+          <span class="tag">Terminal Tool</span>
+          <a href="https://github.com/m3tozz/fastcat" target="_blank">GitHub Repository</a>
+        </div>
+
+        <div class="card">
+          <h2>NotifCat</h2>
+          <p>
+            NotifCat is a terminal application that installs xfce4-notify-4.0 themes directly into system folders.
+          </p>
+          <span class="tag">System Tool</span>
+          <a href="https://github.com/m3tozz/notifcat" target="_blank">GitHub Repository</a>
+        </div>
+
+        <div class="card">
+          <h2>NeoCat</h2>
+          <p>
+            NeoCat contains its own neofetch configurations and uploads the selected configuration to your system!
+          </p>
+          <span class="tag">Terminal Theme</span>
+          <a href="https://github.com/m3tozz/neocat" target="_blank">GitHub Repository</a>
+        </div>
+
+        <div class="card">
+          <h2>Firefox Closer Menu</h2>
+          <p>
+            Quickly close left/right tabs, all tabs, and other Firefox windows with a simple menu.
+          </p>
+          <span class="tag">Browser Tool</span>
+          <a href="https://github.com/m3tozz/firefox-closer-menu" target="_blank">GitHub Repository</a>
+        </div>
+
+        <div class="card">
+          <h2>Chess.com</h2>
+          <p>
+            Chess.com Desktop App For All Platforms
+          </p>
+          <span class="tag">Desktop App</span>
+          <a href="https://github.com/m3tozz/chess.com" target="_blank">GitHub Repository</a>
+        </div>
+
+        <div class="card">
+          <h2>blindsort-tty</h2>
+          <p>
+            a simple terminal-based number sorting game
+          </p>
+          <span class="tag">Terminal Game</span>
+          <a href="https://github.com/m3tozz/blindsort-tty" target="_blank">GitHub Repository</a>
+        </div>
+
+      </div>
+
+      <div class="footer-link">
+        <a href="https://github.com/m3tozz" target="_blank">
+          See all projects on GitHub →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
 </body>
 </html>
