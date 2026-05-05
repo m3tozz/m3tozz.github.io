@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
   <style>
-    /* m3tozz'un sitesi (m3tozz.github.io) çalacaksan bile bu satırı silme abi ya, credit ver bari :) */
+    /* m3tozz'un sitesi (https://m3tozz.github.io) çalacaksan bile bu satırı silme abi ya, credit ver bari :) */
     html { scroll-behavior: smooth; }
 
     body {
@@ -18,7 +18,6 @@
       color: #ffffff;
     }
 
-    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -151,6 +150,7 @@
       border-radius: 20px;
       color: #aaa;
     }
+
     .all-projects {
       text-align: center;
       margin-top: 25px;
@@ -167,21 +167,33 @@
       opacity: 1;
     }
 
+    /* CONTACT (BÜYÜTÜLMÜŞ HALİ) */
     .contact {
-      padding: 70px 20px;
+      padding: 220px 20px;
       text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      font-size: 1.5rem;
+      color: #cccccc;
     }
 
     .contact a {
       display: inline-block;
-      margin-top: 15px;
-      padding: 10px 18px;
+      margin-top: 25px;
+      padding: 18px 32px;
       border: 1px solid #2a2a2a;
-      border-radius: 8px;
+      border-radius: 12px;
       text-decoration: none;
       color: white;
       background: #161616;
       transition: 0.2s;
+      font-size: 1.2rem;
     }
 
     .contact a:hover {
@@ -230,25 +242,11 @@
       <p>I'm not a programmer, just creating simple things.</p>
 
       <div class="links">
-        <a class="link-btn discord" href="https://discord.com/users/1069900432941522994" target="_blank">
-          <i class="ri-discord-fill"></i>
-        </a>
-
-        <a class="link-btn spotify" href="https://open.spotify.com/user/31q7mjrmnxras24qeeyqwtqmvkfa" target="_blank">
-          <i class="ri-spotify-fill"></i>
-        </a>
-
-        <a class="link-btn github" href="https://github.com/m3tozz" target="_blank">
-          <i class="ri-github-fill"></i>
-        </a>
-
-        <a class="link-btn firefox" href="https://addons.mozilla.org/tr/firefox/user/19003496/" target="_blank">
-          <i class="ri-firefox-fill"></i>
-        </a>
-
-        <a class="link-btn linkedin" href="https://www.linkedin.com/in/metin-zühre-b76a03407" target="_blank">
-          <i class="ri-linkedin-fill"></i>
-        </a>
+        <a class="link-btn discord" href="https://discord.com/users/1069900432941522994" target="_blank"><i class="ri-discord-fill"></i></a>
+        <a class="link-btn spotify" href="https://open.spotify.com/user/31q7mjrmnxras24qeeyqwtqmvkfa" target="_blank"><i class="ri-spotify-fill"></i></a>
+        <a class="link-btn github" href="https://github.com/m3tozz" target="_blank"><i class="ri-github-fill"></i></a>
+        <a class="link-btn firefox" href="https://addons.mozilla.org/tr/firefox/user/19003496/" target="_blank"><i class="ri-firefox-fill"></i></a>
+        <a class="link-btn linkedin" href="https://www.linkedin.com/in/metin-zühre-b76a03407" target="_blank"><i class="ri-linkedin-fill"></i></a>
       </div>
 
       <div class="section-nav">
@@ -256,13 +254,11 @@
         <span>|</span>
         <a href="#contact">Contact</a>
       </div>
-
     </div>
   </section>
 
   <section class="projects" id="projects">
     <div class="projects-container">
-
       <div class="projects-title">Projects</div>
 
       <div class="grid">
@@ -276,23 +272,37 @@
 
         <div class="card">
           <h2>NotifCat</h2>
-          <p>NotifCat is a terminal application that installs XFCE notification themes into system folders.</p>
+          <p>NotifCat is a terminal application that installs xfce4-notify-4.0 themes directly into system folders.</p>
           <span class="tag">System Tool</span>
           <a href="https://github.com/m3tozz/notifcat" target="_blank">GitHub Repository</a>
         </div>
 
         <div class="card">
           <h2>NeoCat</h2>
-          <p>NeoCat manages and uploads neofetch configurations.</p>
+          <p>NeoCat contains its own neofetch configurations and uploads the selected configuration to your system!</p>
           <span class="tag">Terminal Theme</span>
           <a href="https://github.com/m3tozz/neocat" target="_blank">GitHub Repository</a>
         </div>
 
         <div class="card">
           <h2>Firefox Closer Menu</h2>
-          <p>Quickly manage and close Firefox tabs and windows via a simple menu.</p>
+          <p>Quickly close left/right tabs, all tabs, and other Firefox windows with a simple menu.</p>
           <span class="tag">Browser Tool</span>
           <a href="https://github.com/m3tozz/firefox-closer-menu" target="_blank">GitHub Repository</a>
+        </div>
+
+        <div class="card">
+          <h2>Chess.com</h2>
+          <p>Chess.com Desktop App For All Platforms</p>
+          <span class="tag">Desktop App</span>
+          <a href="https://github.com/m3tozz/chess.com" target="_blank">GitHub Repository</a>
+        </div>
+
+        <div class="card">
+          <h2>blindsort-tty</h2>
+          <p>a simple terminal-based number sorting game</p>
+          <span class="tag">Terminal Game</span>
+          <a href="https://github.com/m3tozz/blindsort-tty" target="_blank">GitHub Repository</a>
         </div>
 
       </div>
@@ -321,11 +331,8 @@
     const btn = document.getElementById("scrollTopBtn");
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) {
-        btn.classList.add("show");
-      } else {
-        btn.classList.remove("show");
-      }
+      if (window.scrollY > 200) btn.classList.add("show");
+      else btn.classList.remove("show");
     });
   </script>
 
